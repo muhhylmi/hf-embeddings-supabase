@@ -28,7 +28,8 @@ A simple Retrieval-Augmented Generation (RAG) app using:
 -   Supabase → Search Relevant Chunks → Find most similar text chunks.
 -   Groq LLaMA 3 → Generate Final Answer → Create a natural language answer.
 -   Return Answer to User → Display final output.
-    User ➡️ Embedding ➡️ Supabase Search ➡️ LLM Groq ➡️ Answer
+
+User ➡️ Embedding ➡️ Supabase Search ➡️ LLM Groq ➡️ Answer
 
 Quickstart:
 
