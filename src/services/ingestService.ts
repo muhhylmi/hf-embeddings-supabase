@@ -1,7 +1,9 @@
+import path from "path";
 import { supabaseAdmin } from "../config/supabase";
 import { getEncoderAndChunker } from "../utils/chunkText";
 import { createEmbeddings } from "./embeddings";
 import dotenv from "dotenv";
+import fs from "fs";
 dotenv.config();
 
 const CHUNK_SIZE = parseInt(process.env.CHUNK_SIZE_TOKENS ?? "500");
@@ -20,4 +22,13 @@ export async function ingestText(text: string, metadata: Record<string, any> | n
     if (error) throw error;
 
     return { inserted: chunks.length };
+}
+
+export async function ingestTextFile(filePath: string) {
+    const file = fs.readFileSync(filePath, "utf8");
+    const splitFile = file.split("\r\n\r\n\r\n");
+    for (const item of splitFile) {
+        ingestText(item);
+    }
+    return { inserted: splitFile };
 }

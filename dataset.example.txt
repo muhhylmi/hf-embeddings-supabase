@@ -1,0 +1,10 @@
+Vibe coding is a software development practice where large language models (LLMs) are used to generate code from natural language prompts. 
+It emphasizes quickly building applications and features by describing desired functionality rather than writing explicit code. 
+While it can accelerate development and make coding more accessible, it also raises concerns about code understanding, potential errors, 
+and the impact on traditional software engineering roles. 
+
+
+Vibe coding tools are AI-powered coding assistants that enable developers to code more intuitively using natural language prompts. 
+These tools leverage large language models (LLMs) to understand intent and generate code, 
+allowing for a more conversational and fluid coding experience. Key platforms in this category include Cursor, 
+Windsurf, Replit, and Lovable

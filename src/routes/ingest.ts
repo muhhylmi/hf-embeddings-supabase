@@ -1,6 +1,19 @@
 import { Router } from "express";
-import { ingestText } from "../services/ingestService";
+import { ingestText, ingestTextFile } from "../services/ingestService";
+import path from "path";
 const router = Router();
+
+
+router.post("/txt", async (req, res) => {
+    try {
+        const filePath = path.join(__dirname, "..", "..", "dataset", "clean.txt");
+        const result = await ingestTextFile(filePath);
+        res.json({ ok: true, result });
+    } catch (err: any) {
+        console.error(err);
+        res.status(500).json({ error: err.message ?? String(err) });
+    }
+});
 
 router.post("/", async (req, res) => {
     try {
@@ -13,5 +26,6 @@ router.post("/", async (req, res) => {
         res.status(500).json({ error: err.message ?? String(err) });
     }
 });
+
 
 export default router;
